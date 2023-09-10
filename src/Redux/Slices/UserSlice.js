@@ -30,7 +30,7 @@ export const createNewUser = createAsyncThunk('CreateUser', async (data, { rejec
         const result = await createUser.json()
         return result
     } catch (error) {
-        return rejectWithValue(error)
+        return rejectWithValue(error.response.data)
     }
 })
 
@@ -101,7 +101,7 @@ export const UsersData = createSlice({
         },
         [getUsersData.rejected]: (state, action) => {
             state.loading = false
-            state.error = action.payload.message;
+            state.error = {error:"Something went wrong.... Could not fetch"};
         },
         //////////////////////////////////
         [createNewUser.pending]: (state) => {

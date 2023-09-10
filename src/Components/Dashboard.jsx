@@ -87,7 +87,7 @@ const Dashboard = () => {
     return (
         <>
             <Navbar />
-            {error !== null && <CustomAlert severity={'error'} message={error.err} type={'Error'} />}
+            {error !== null && <CustomAlert severity={'error'} message={error.error} type={'Error'} />}
             <Container style={{ padding: 24 }}>
                 <h1 style={{ textAlign: "center", margin: "20px 20px" }}>Users Data</h1>
                 <TableContainer component={Paper}>
